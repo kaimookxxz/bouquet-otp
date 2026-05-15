@@ -85,9 +85,10 @@ export async function GET(req: Request) {
       {
         method: "POST",
         headers: {
-          "Content-Type":
-            "application/json",
-        },
+  "Content-Type": "application/json",
+  "User-Agent": "Mozilla/5.0",
+  "Accept": "application/json",
+},
         body: JSON.stringify({
           apiKey,
           email,

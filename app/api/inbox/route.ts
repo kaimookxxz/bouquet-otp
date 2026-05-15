@@ -98,14 +98,11 @@ export async function GET(req: Request) {
     )
 
     if (!res.ok) {
-      return NextResponse.json(
-        {
-          error:
-            "ไม่สามารถโหลดข้อความได้ กรุณาลองใหม่",
-        },
-        { status: 502 }
-      )
-    }
+  return NextResponse.json(
+    { error: "Maily error", status: res.status, detail: await res.text() },
+    { status: 502 }
+  )
+}
 
     const data = await res.json()
 
